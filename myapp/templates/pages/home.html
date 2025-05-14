@@ -1,0 +1,64 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+
+<!-- Banner Section -->
+<section class="bg-cover bg-center h-64 md:h-96 text-white flex items-center justify-center" style="background-image: url('/static/img/Banner.jpg');">
+  <div class="text-center">
+    <h1 class="text-3xl md:text-5xl font-bold">Welcome to MyStore</h1>
+    <p class="mt-4 text-lg">Shop the latest and greatest now</p>
+  </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="mb-5">
+  <h2 class="mb-3">Follow Us</h2>
+  <div class="row">
+      <div class="col">
+          <div class="embed-responsive embed-responsive-1by1">
+              <!-- Placeholder for social media feed -->
+              <iframe class="embed-responsive-item" src="https://www.instagram.com/embed" width="100%" height="300" frameborder="0"></iframe>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Category Section -->
+<section class="py-8 px-4 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Shop by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-white p-4 shadow">Category 1</div>
+      <div class="bg-white p-4 shadow">Category 2</div>
+      <div class="bg-white p-4 shadow">Category 3</div>
+      <div class="bg-white p-4 shadow">Category 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- Best Sellers Slider -->
+<section class="py-8 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Best Sellers</h2>
+    <div class="overflow-x-auto whitespace-nowrap space-x-4 flex">
+      <div class="inline-block bg-white shadow p-4 min-w-[200px]">Product 1</div>
+      <div class="inline-block bg-white shadow p-4 min-w-[200px]">Product 2</div>
+      <div class="inline-block bg-white shadow p-4 min-w-[200px]">Product 3</div>
+      <div class="inline-block bg-white shadow p-4 min-w-[200px]">Product 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Reviews Slider -->
+<section class="py-8 px-4 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">What Our Customers Say</h2>
+    <div class="overflow-x-auto whitespace-nowrap space-x-4 flex">
+      <div class="inline-block bg-white p-4 shadow min-w-[250px]">"Amazing service!" - Jane</div>
+      <div class="inline-block bg-white p-4 shadow min-w-[250px]">"Loved the quality!" - Mike</div>
+      <div class="inline-block bg-white p-4 shadow min-w-[250px]">"Fast delivery!" - Emma</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
