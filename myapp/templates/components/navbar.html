@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg bg-light custom-navbar fixed-top">
     <div class="container">
       <!-- Logo -->
-      <a class="navbar-brand d-flex justify-content-center animate__pulse" href="#">
+      <a class="navbar-brand d-flex justify-content-center" href="#">
         <img src="{% static 'img/logo.jpg' %}" alt="Logo" class="logo-img me-2">
         <span>BEAUTY SHOP</span>
       </a>
@@ -12,18 +12,24 @@
       <button class="navbar-toggler" id="navbarToggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavbarOffcanvas" aria-controls="mainNavbarOffcanvas">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
 
       <!-- Offcanvas Menu (Slides from Right) -->
       <div class="offcanvas offcanvas-end" tabindex="-1" id="mainNavbarOffcanvas" aria-labelledby="mainNavbarLabel">
+        
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="mainNavbarLabel">BEAUTY SHOP</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        
         <div class="offcanvas-body d-lg-flex justify-content-between align-items-center text-center">
+          <hr>
           <!-- Left Nav Links -->
           <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
             <li class="nav-item text-center me-4">
-              <a class="nav-link py-2" href="#"><i class="bi bi-bar-chart-steps"></i><span class="d-block">Category</span></a>
+              <a class="nav-link py-2" data-bs-toggle="offcanvas" href="#categoryOffcanvas" role="button" aria-controls="categoryOffcanvas">
+                <i class="bi bi-bar-chart-steps"></i><span class="d-block">Categories</span>
+              </a>
             </li>
             <li class="nav-item text-center me-4">
               <a class="nav-link py-2" href="#"><i class="bi bi-bag-check-fill"></i><span class="d-block">Offers</span></a>
@@ -32,7 +38,7 @@
               <a class="nav-link py-2" href="#"><i class="bi bi-cash-coin"></i><span class="d-block">Best Sellers</span></a>
             </li>
             <li class="nav-item text-center me-4">
-              <a class="nav-link py-2" href="#"><i class="bi bi-emoji-smile-fill"></i><span class="d-block">About</span></a>
+              <a class="nav-link py-2" href="#"><i class="bi bi-emoji-smile-fill"></i><span class="d-block">About Us</span></a>
             </li>
           </ul>
 
@@ -52,4 +58,21 @@
       </div>
     </div>
   </nav>
+  <div class="offcanvas offcanvas-start category-menu" tabindex="-1" id="categoryOffcanvas" aria-labelledby="categoryOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="categoryOffcanvasLabel"><b>Categories</b></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li class="categoryitem"><a href="#" class="d-block py-2"><img src="{% static "img/skin_care.jpg" %}" alt="skin care" >Skin Care</a></li>
+        <li class="categoryitem"><a href="#" class="d-block py-2"><img src="{% static "img/hair_care.jpg" %}" alt="hair care" >Hair Care</a></li>
+        <li class="categoryitem"><a href="#" class="d-block py-2"><img src="{% static "img/makeup.jpg" %}" alt="makeup" >Makeup</a></li>
+        <li class="categoryitem"><a href="#" class="d-block py-2"><img src="{% static "img/fragrance.jpg" %}" alt="fragrance" >Fragrances</a></li>
+        <li class="categoryitem"><a href="#" class="d-block py-2"><img src="{% static "img/Tools_Brushes.jpg" %}" alt="Tools & Brushes" >Tools & Brushes</a></li>
+        <!-- Add more categories here -->
+      </ul>
+    </div>
+  </div>
 </section>

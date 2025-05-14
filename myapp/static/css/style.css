@@ -1,111 +1,130 @@
-/* NAVBAR */
-
+/* === NAVBAR BASE === */
 .custom-navbar {
     background-color: #f8f9fa;
     border-radius: 12px;
     margin: 0 1rem;
     padding: 0.75rem 1rem;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); /* lighter and smaller shadow */
     z-index: 1030;
-
-}
-
-.custom-navbar .logo-img {
+  }
+  
+  .custom-navbar .logo-img {
     height: 32px;
     width: auto;
     margin-right: 1rem;
-}
-
-.custom-navbar .nav-link {
-    color: #6c757d;
-    transition: all 0.3s ease, background 0.3s ease;
-    font-weight: 500;
+  }
+  
+  /* === NAV LINKS === */
+  .custom-navbar .nav-link {
     position: relative;
+    color: #6c757d;
+    font-weight: 500;
     overflow: hidden;
-}
-
-.custom-navbar .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #406ff3;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.custom-navbar .nav-link:hover::after,
-.custom-navbar .nav-link:focus::after,
-.custom-navbar .nav-link.active::after {
-    transform: scaleX(1);
-    transform-origin: left;
-    background: #c50274;
-    transition: transform 0.3s ease;
-}
-
-.custom-navbar .nav-link:not(:hover)::after {
-    transform: scaleX(0);
-    transform-origin: right;
-}
-
-.custom-navbar .nav-link i {
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  .custom-navbar .nav-link i {
     display: block;
     margin-bottom: 4px;
     color: #6c757d;
     transition: color 0.3s ease;
-}
-
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link:focus,
-.custom-navbar .nav-link.active {
+  }
+  
+  /* Hover / Focus / Active State */
+  .custom-navbar .nav-link:hover,
+  .custom-navbar .nav-link:focus,
+  .custom-navbar .nav-link.active {
     color: #fff;
     background: linear-gradient(90deg, #740352, #c50274);
     border-radius: 8px;
     padding: 0.5rem 1rem;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease; 
-}
-
-.custom-navbar .nav-link:hover i,
-.custom-navbar .nav-link.active i {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* smaller shadow for hover state */
+    transition: all 0.3s ease;
+  }
+  
+  .custom-navbar .nav-link:hover i,
+  .custom-navbar .nav-link.active i {
     color: #fff;
-}
-
-.custom-navbar .btn-primary {
+  }
+  
+  /* === NAV LINK UNDERLINE ANIMATION === */
+  .custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #c50274;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .custom-navbar .nav-link:hover::after,
+  .custom-navbar .nav-link:focus::after,
+  .custom-navbar .nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* === BUTTONS === */
+  .custom-navbar .btn-primary {
     background-color: #406ff3;
     border-color: #406ff3;
-    transition: background-color 0.3s ease;
-
-}
-
-.custom-navbar .btn-primary:hover {
+    transition: all 0.3s ease;
+  }
+  
+  .custom-navbar .btn-primary:hover {
     background-color: #2f53c6;
     border-color: #2f53c6;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* subtle shadow on hover */
     transition: all 0.3s ease;
-
-}
-
-@media (max-width: 768px) {
+  }
+  
+  
+  /* === MOBILE STYLES === */
+  @media (max-width: 768px) {
     .custom-navbar {
-        margin: 0;
-        border-radius: 0;
-        padding: 0.5rem 1rem;
+      margin: 0;
+      border-radius: 0;
+      padding: 0.5rem 1rem;
     }
-
+  
     .offcanvas.offcanvas-end {
-        width: 250px; /* smaller side panel */
+      width: 250px;
     }
-
+    .offcanvas.category-menu {
+        width: 220px; /* or adjust to your desired width */
+      }
+      .category-menu .offcanvas-body {
+        padding: 1rem;
+      }
+      
+      .category-menu ul li a {
+        font-size: 0.95rem;
+        padding: 0.4rem 0;
+      }
+  
     .navbar-nav.flex-row {
-        flex-direction: row;
-        justify-content: space-around;
+      flex-direction: row;
+      justify-content: space-around;
     }
-
+  
     .navbar-nav.flex-row .nav-item {
-        margin-right: 1rem;
+      margin-right: 1rem;
     }
+    
+  }
+.categoryitem{
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 1rem;
+}
+.categoryitem.img{
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
 }
