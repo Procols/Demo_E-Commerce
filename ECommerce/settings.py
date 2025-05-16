@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_m5g91e=$543tj(1*oij67it9khqwb3w24q$8y^2$j(epl23ym'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'IndiaCultureDemo.onrender.com']
 
 
 # Application definition
@@ -123,6 +123,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     '/myapp/static/'
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 MEDIA_URL='/myapp/media/'
 MEDIA_ROOT=BASE_DIR/'myapp/media'
