@@ -1,0 +1,97 @@
+<section class="orders-section">
+    <div class="orders-card">
+      <div class="orders-title">
+        <i class="fa-solid fa-box-open"></i> My Orders
+      </div>
+      <div class="table-responsive mt-4">
+        <table class="table orders-table">
+          <thead>
+            <tr>
+              <th>Order #</th>
+              <th>Product</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Total</th>
+              <th>Track</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#1001</td>
+              <td>
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="Glow Face Serum" />
+                <div class="fw-bold mt-1">Glow Face Serum</div>
+              </td>
+              <td>2025-05-15</td>
+              <td><span class="order-status status-shipped">Shipped</span></td>
+              <td>₹19.99</td>
+              <td><a href="#track-1001" class="btn btn-sm btn-outline-primary">Track</a></td>
+            </tr>
+            <tr>
+              <td>#1000</td>
+              <td>
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Hydra Cleanser" />
+                <div class="fw-bold mt-1">Hydra Cleanser</div>
+              </td>
+              <td>2025-05-10</td>
+              <td><span class="order-status status-delivered">Delivered</span></td>
+              <td>₹14.99</td>
+              <td><a href="#track-1000" class="btn btn-sm btn-outline-primary">Track</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tracking: Order #1001 -->
+      <div class="track-section" id="track-1001">
+        <div class="track-title"><i class="fa-solid fa-location-dot me-2"></i>Order #1001 Tracking</div>
+        <div class="track-steps">
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-check"></i></div>
+            <div class="label">Ordered</div>
+          </div>
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-box"></i></div>
+            <div class="label">Packed</div>
+          </div>
+          <div class="track-step active">
+            <div class="circle"><i class="fa-solid fa-truck"></i></div>
+            <div class="label">Shipped</div>
+          </div>
+          <div class="track-step">
+            <div class="circle"><i class="fa-solid fa-house"></i></div>
+            <div class="label">Delivered</div>
+          </div>
+        </div>
+        <div class="text-end mt-3">
+          <span class="badge bg-info text-dark">Expected Delivery: 2025-05-18</span>
+        </div>
+      </div>
+
+      <!-- Tracking: Order #1000 -->
+      <div class="track-section" id="track-1000">
+        <div class="track-title"><i class="fa-solid fa-location-dot me-2"></i>Order #1000 Tracking</div>
+        <div class="track-steps">
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-check"></i></div>
+            <div class="label">Ordered</div>
+          </div>
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-box"></i></div>
+            <div class="label">Packed</div>
+          </div>
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-truck"></i></div>
+            <div class="label">Shipped</div>
+          </div>
+          <div class="track-step completed">
+            <div class="circle"><i class="fa-solid fa-house"></i></div>
+            <div class="label">Delivered</div>
+          </div>
+        </div>
+        <div class="text-end mt-3">
+          <span class="badge bg-success">Delivered on: 2025-05-13</span>
+        </div>
+      </div>
+    </div>
+  </section>

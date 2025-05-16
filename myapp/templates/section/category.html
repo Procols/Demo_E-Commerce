@@ -1,15 +1,131 @@
-<section class="categories-section">
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+    .categories-section {
+      padding: 2.5rem 0 2rem 0;
+      background: linear-gradient(90deg, #e6f0ff 60%, #f8fafc 100%);
+    }
+
+    .categories-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e3c72;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeInDown 1s;
+}
+
+    .categories-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-start;
+    }
+
+    .category-card {
+      flex: 0 0 calc(16.66% - 1rem);
+      max-width: calc(16.66% - 1rem);
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px 0 #4f8cff18;
+      padding: 1rem 0.75rem 0.75rem 0.75rem;
+      text-align: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px 0 #4f8cff33;
+      background: linear-gradient(90deg, #e6f0ff 70%, #b6d0ff 100%);
+    }
+
+    .category-icon {
+      font-size: 2.2rem;
+      color: #4f8cff;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+    }
+
+    .category-card:hover .category-icon {
+      color: #1e3c72;
+    }
+
+    .category-label {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #1e3c72;
+      margin-bottom: 0.2rem;
+    }
+
+    .category-count {
+      font-size: 0.95rem;
+      color: #4f8cff;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 767.98px) {
+      .categories-title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .categories-grid {
+        gap: 0.75rem;
+      }
+
+      .category-card {
+        flex: 0 0 calc(50% - 0.75rem);
+        max-width: calc(50% - 0.75rem);
+        padding: 0.8rem 0.5rem;
+      }
+
+      .category-icon {
+        font-size: 1.6rem;
+        width: 36px;
+        height: 36px;
+      }
+
+      .category-label {
+        font-size: 0.95rem;
+      }
+
+      .category-count {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="categories-section">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <div class="categories-title d-flex align-items-center mb-0">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=32&h=32&facepad=2&q=80" alt="Categories" class="me-2 rounded-circle" style="width:32px;height:32px;object-fit:cover;border-radius:8px;">
+        <div class="categories-title bestsell-title mb-3">
+          <i class="fa-solid fa-layer-group me-2" style="color:#e1306c;"></i>
           <span>Categories</span>
         </div>
         <a href="{% url 'categories' %}" class="btn btn-link text-primary fw-semibold p-0" style="font-size:1rem;">View All <i class="fa fa-arrow-right ms-1"></i></a>
       </div>
-      <div  class="categories-grid">
+      <div class="categories-grid">
         <!-- Repeat category cards -->
-        <a href="{% url 'products' %}" class="category-card text-decoration-none">
+        <a href="{% url 'products' %}"" class="category-card text-decoration-none">
           <div class="category-icon">
             <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Makeup" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
@@ -19,7 +135,7 @@
 
         <a href="{% url 'products' %}" class="category-card text-decoration-none">
           <div class="category-icon">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Skincare" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
+            <img src="{% static 'img/cate1.jpg' %}" alt="Skincare" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
           <div class="category-label">Skincare</div>
           <div class="category-count">22 products</div>
@@ -27,7 +143,7 @@
 
         <a href="{% url 'products' %}" class="category-card text-decoration-none">
           <div class="category-icon">
-            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Haircare" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
+            <img src="{% static 'img/cate2.jpg' %}" alt="Haircare" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
           <div class="category-label">Haircare</div>
           <div class="category-count">19 products</div>
@@ -35,7 +151,7 @@
 
         <a href="#" class="category-card text-decoration-none">
           <div class="category-icon">
-            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Natural" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
+            <img src="{% static 'img/cate3.jpg' %}" alt="Natural" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
           <div class="category-label">Natural</div>
           <div class="category-count">14 products</div>
@@ -43,7 +159,7 @@
 
         <a href="#" class="category-card text-decoration-none">
           <div class="category-icon">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Spa & Wellness" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
+            <img src="{% static 'img/cate4.jpg' %}" alt="Spa & Wellness" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
           <div class="category-label">Spa & Wellness</div>
           <div class="category-count">11 products</div>
@@ -51,7 +167,7 @@
 
         <a href="#" class="category-card text-decoration-none">
           <div class="category-icon">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=96&h=96&facepad=2&q=80" alt="Bath & Body" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
+            <img src="{% static 'img/cate5.jpg' %}" alt="Bath & Body" style="width:72px;height:72px;object-fit:cover;border-radius:8px;">
           </div>
           <div class="category-label">Bath & Body</div>
           <div class="category-count">17 products</div>
@@ -59,3 +175,5 @@
       </div>
     </div>
   </section>
+</body>
+</html>

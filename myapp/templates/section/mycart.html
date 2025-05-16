@@ -1,0 +1,50 @@
+<div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+
+    <section class="cart-section position-relative">
+        <div class="container">
+            <div class="cart-card shadow-lg">
+            <div class="cart-title mb-4 d-flex align-items-center">
+                <i class="fa-solid fa-cart-shopping me-2"></i>
+                <span>My Cart</span>
+            </div>
+            <div class="table-responsive">
+                <table class="table cart-table align-middle">
+                <thead>
+                    <tr>
+                    <th>Product</th>
+                    <th>Details</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="Glow Face Serum"></td>
+                    <td><div class="product-title">Glow Face Serum</div><div class="product-meta">30ml | Brand: Glowify</div></td>
+                    <td>₹19.99</td>
+                    <td><input type="number" class="form-control" value="1" min="1"></td>
+                    <td>₹19.99</td>
+                    <td><button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                    <tr>
+                    <td><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Hydra Cleanser"></td>
+                    <td><div class="product-title">Hydra Cleanser</div><div class="product-meta">Brand: AquaPure</div></td>
+                    <td>₹14.99</td>
+                    <td><input type="number" class="form-control" value="2" min="1"></td>
+                    <td>₹29.98</td>
+                    <td><button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total mb-2">Total: ₹49.97</div>
+                <a href="{% url 'checkout' %}" class="btn btn-checkout"><i class="fa-solid fa-credit-card"></i> Proceed to Checkout</a>
+            </div>
+            </div>
+        </div>
+    </section>
