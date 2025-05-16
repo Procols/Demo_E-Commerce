@@ -1,0 +1,40 @@
+{% load static %}
+<div class="position-relative">
+  <img src="{% static 'img/bghero.jpg' %}" alt="Background Image" class="img-fluid w-100 h-100 position-absolute top-0 start-0" style="z-index: 1; object-fit: cover; opacity: 0.5;">
+    <!-- Oblique Image Section -->
+    <div class="oblique position-absolute top-0 h-100 d-md-block d-none w-50">
+      <div
+        class="oblique-image position-absolute fixed-top end-0 h-100"
+        >
+      </div>
+    </div>
+
+    <!-- Carousel Hero Section -->
+    <div class="container d-flex justify-content-center align-items-center position-relative" style="padding: 0; z-index: 2;">
+      <div id="heroCarousel" class="carousel slide carousel-container" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img src="{% static 'img/heroslider1.jpg' %}" alt="Summer Glow">
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img src="{% static 'img/heroslider2.jpg' %}" alt="Beauty Essentials">
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img src="{% static 'img/heroslider3.jpg' %}" alt="New Arrivals">
+          </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>

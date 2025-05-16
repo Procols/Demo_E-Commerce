@@ -1,0 +1,58 @@
+<!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-gradient-blue py-3">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <i class="fa-solid fa-store me-2"></i>Beauty Shop
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <!-- Mobile Close Button -->
+                    <button type="button" class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'home' %}"><i class="fa-solid fa-home me-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-store me-1"></i>Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pump-soap me-1"></i>Skincare</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-brush me-1"></i>Makeup</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bottle-droplet me-1"></i>Haircare</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-leaf me-1"></i>Natural</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'categories' %}"><i class="fa-solid fa-eye me-1"></i>View All</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#bestsell" ><i class="fa-solid fa-star me-1"></i>Best Sellers</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-circle-info me-1"></i>About Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user me-1"></i>My Account
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                            <li><a class="dropdown-item" href="{% url 'signin' %}"><i class="fa-solid fa-right-to-bracket me-1"></i>Login</a></li>
+                            <li><a class="dropdown-item" href="{% url 'watchlist' %}"><i class="fa-solid fa-heart me-1"></i>Watchlist</a></li>
+                            <li><a class="dropdown-item" href="{% url 'myorder' %}"><i class="fa-solid fa-box me-1"></i>My Orders</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                    <a href="{% url 'mycart' %}" class="btn btn-sm btn-round mb-0 ms-lg-3">
+                        <i class="fa-solid fa-cart-shopping me-1"></i>Cart
+                    </a>
+                </div>
+                <div class="side-drawer-backdrop" id="sideDrawerBackdrop"></div>
+            </div>
+        </nav>
+        <!-- Navbar End -->

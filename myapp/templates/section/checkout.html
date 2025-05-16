@@ -1,0 +1,98 @@
+
+
+<div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <section class="checkout-section position-relative">
+        <div class="container">
+            <div class="checkout-card shadow-lg">
+                <div class="checkout-title mb-4 d-flex align-items-center">
+                    <i class="fa-solid fa-bag-shopping me-2"></i>
+                    <span>Checkout</span>
+                </div>
+                <!-- Order Summary -->
+                <div class="order-summary mb-4">
+                    <div class="order-summary-title">Order Summary</div>
+                    <div class="order-item">
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="Glow Face Serum">
+                            <span>Glow Face Serum (30ml)</span>
+                        </div>
+                        <span>₹19.99 x 1</span>
+                    </div>
+                    <div class="order-item">
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Hydra Cleanser">
+                            <span>Hydra Cleanser</span>
+                        </div>
+                        <span>₹14.99 x 2</span>
+                    </div>
+                    <div class="order-total">
+                        Total: ₹49.97
+                    </div>
+                </div>
+                <!-- Checkout Form -->    <form class="form-section"></form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Shipping Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                            <input type="text" class="form-control" id="address" placeholder="Enter your shipping address" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
+                                <input type="text" class="form-control" id="city" placeholder="City" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="zip" class="form-label">ZIP Code</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-location-arrow"></i></span>
+                                <input type="text" class="form-control" id="zip" placeholder="ZIP" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa-solid fa-flag"></i></span>
+                                <input type="text" class="form-control" id="country" placeholder="Country" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="payment" class="form-label">Payment Method</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-credit-card"></i></span>
+                            <select class="form-select" id="payment" required>
+                                <option value="">Select payment method</option>
+                                <option>Credit Card</option>
+                                <option>Debit Card</option>
+                                <option>UPI</option>
+                                <option>Cash on Delivery</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mt-2"><i class="fa-solid fa-lock me-2"></i>Place Order</button>
+                </form>
+            </div>
+        </div>
+    </section>

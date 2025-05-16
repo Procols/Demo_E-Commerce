@@ -1,0 +1,185 @@
+{% load static %}
+<section class="bestsell-section" id="bestsell" >
+    <div class="container">
+        <div class="bestsell-title mb-3">
+            <i class="fa-solid fa-star me-2" style="color:#e1306c"></i>
+            Best Selling Products
+        </div>
+        <!-- First Row: Left to Right -->
+        <div class="bestsell-scroll-row">
+            <!-- Card 1 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd5.jpg' %}" alt="Product 1">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Glow Face Serum</div></a>
+                        <div class="bestsell-meta">
+
+                        </div>
+                        <div class="bestsell-price">₹19.99</div>
+                    </div>
+                    <a href="{% url 'mycart' %}"><button  class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button></a>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd4.jpg' %}" alt="Product 2">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Hydra Cleanser</div></a>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹14.99</div>
+                    </div>
+                    <a href="{% url 'mycart' %}"><button  class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button></a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd10.jpg' %}" alt="Product 3">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Silky Hair Oil</div></a>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹22.50</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd9.jpg' %}" alt="Product 4">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Natural Body Lotion</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹17.00</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd8.jpg' %}" alt="Product 9">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Charcoal Face Mask</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹15.99</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd7.jpg' %}" alt="Product 10">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Lavender Night Cream</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹23.49</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+        <!-- Second Row: Right to Left -->
+        <div class="bestsell-scroll-row reverse">
+            <!-- Card 5 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd6.jpg' %}" alt="Product 5">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Vitamin C Cream</div></a>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹21.99</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd5.jpg' %}" alt="Product 6">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Aloe Vera Gel</div></a>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹13.99</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 7 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd4.jpg' %}" alt="Product 7">
+                <div class="bestsell-info">
+                    <div>
+                        <a href="{% url 'product_details' %}"><div class="bestsell-title-product">Rose Water Toner</div></a>
+                        <div class="bestsell-meta">
+                    
+                        </div>
+                        <div class="bestsell-price">₹16.50</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 8 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd3.jpg' %}" alt="Product 8">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Herbal Shampoo</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹18.00</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 9 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd2.jpg' %}" alt="Product 11">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Green Tea Moisturizer</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹20.49</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Card 10 -->
+            <div class="bestsell-card">
+                <img src="{% static 'img/prd1.jpg' %}" alt="Product 12">
+                <div class="bestsell-info">
+                    <div>
+                        <div class="bestsell-title-product">Coconut Hair Mask</div>
+                        <div class="bestsell-meta">
+                            
+                        </div>
+                        <div class="bestsell-price">₹24.99</div>
+                    </div>
+                    <button class="bestsell-btn mt-2"><i class="fa-solid fa-cart-plus me-1"></i>Add to Cart</button>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+</section>
