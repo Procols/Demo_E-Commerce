@@ -292,33 +292,45 @@
     <div class="auth-wrapper">
         <div class="form-wrapper">
             <!-- Sign In Form -->
-            <form id="signInForm" class="active">
+            <form id="signInForm" class="active" method="POST" action="{% url 'login' %}">
+
+                {% csrf_token %}
                 <h2>Welcome Back</h2>
+            
+                {% if messages %}
+                    {% for message in messages %}
+                        <p style="color:red;">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            
                 <label>
                     Email
-                    <input type="email" placeholder="Enter your email" required>
+                    <input type="text" name="username" placeholder="Enter your email" required>
                 </label>
                 <label>
                     Password
-                    <input type="password" placeholder="Enter your password" required>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </label>
                 <button type="submit" class="submit">Sign In</button>
             </form>
+            
 
             <!-- Sign Up Form -->
-            <form id="signUpForm">
+            <form method="POST" action="{% url 'signup2' %}">
+
+                {% csrf_token %}
                 <h2>Create Account</h2>
                 <label>
                     Name
-                    <input type="text" placeholder="Your name" required>
+                    <input type="text" placeholder="Your name" name="username" required>
                 </label>
                 <label>
                     Email
-                    <input type="email" placeholder="Your email" required>
+                    <input type="email" placeholder="Your email" name="emailaddress" required>
                 </label>
                 <label>
                     Password
-                    <input type="password" placeholder="Create a password" required>
+                    <input type="password" placeholder="Create a password" name="password" required>
                 </label>
                 <button type="submit" class="submit">Sign Up</button>
             </form>
@@ -331,6 +343,31 @@
             </div>
         </div>
     </div>
-
     
     </section>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const signInForm = document.getElementById('signInForm');
+        const signUpForm = signInForm.nextElementSibling; // The second form
+        const panelText = document.getElementById('panelText');
+    
+        let showingSignIn = true;
+    
+        toggleBtn.addEventListener('click', () => {
+            if (showingSignIn) {
+                signInForm.classList.remove('active');
+                signUpForm.classList.add('active');
+                toggleBtn.textContent = "Sign In";
+                panelText.innerHTML = "Already have an account?<br>Sign in to continue!";
+            } else {
+                signUpForm.classList.remove('active');
+                signInForm.classList.add('active');
+                toggleBtn.textContent = "Sign Up";
+                panelText.innerHTML = "Don't have an account?<br>Sign up and join us!";
+            }
+            showingSignIn = !showingSignIn;
+        });
+    </script>
+    

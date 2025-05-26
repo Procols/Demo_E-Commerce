@@ -1,8 +1,10 @@
+{% load static %}
 <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg navbar-light bg-gradient-blue py-3">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    <i class="fa-solid fa-store me-2"></i>Beauty Shop
+                    <img src="{% static 'img/logo.png' %}" alt="logo" style="height:40px; width:auto; vertical-align:middle;">
+                    <b style="font-family: sans-serif;">INDIACULTURE</b>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,7 +50,7 @@
                           </ul>
                         </li>
                     </ul>
-                    <a href="{% url 'mycart' %}" class="btn btn-sm btn-round mb-0 ms-lg-3">
+                    <a href="{% url 'cart' %}" class="btn btn-sm btn-round mb-0 ms-lg-3">
                         <i class="fa-solid fa-cart-shopping me-1"></i>Cart
                     </a>
                 </div>

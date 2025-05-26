@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Your Payment</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Thank you for your order!</h2>
+        <p>Order ID: <strong>#{{ order.id }}</strong></p>
+        <p>Total Amount: ₹<strong>{{ order.total_price }}</strong></p>
+        <p>Click below to complete the payment via {{ payment_method }}:</p>
+
+        <a href="{{ upi_url }}" class="btn btn-success" style="font-size: 20px;">
+            Pay Now via {{ payment_method }}
+        </a>
+
+        <br><br>
+        <p><strong>Note:</strong> This will open your UPI app such as GPay, PhonePe, or Paytm.</p>
+    </div>
+</body>
+</html>

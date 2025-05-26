@@ -1,98 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="{% static 'your_css_file.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
 
+<section class="checkout-section py-5">
+  <div class="container">
+    <div class="checkout-card p-4 bg-white shadow rounded">
+      
+      <!-- Checkout Header -->
+      <div class="checkout-title mb-4 d-flex align-items-center">
+        <i class="fa-solid fa-bag-shopping me-2 fs-4 text-primary"></i>
+        <h3 class="mb-0">Checkout</h3>
+      </div>
 
-<div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-    <section class="checkout-section position-relative">
-        <div class="container">
-            <div class="checkout-card shadow-lg">
-                <div class="checkout-title mb-4 d-flex align-items-center">
-                    <i class="fa-solid fa-bag-shopping me-2"></i>
-                    <span>Checkout</span>
-                </div>
-                <!-- Order Summary -->
-                <div class="order-summary mb-4">
-                    <div class="order-summary-title">Order Summary</div>
-                    <div class="order-item">
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=80&q=80" alt="Glow Face Serum">
-                            <span>Glow Face Serum (30ml)</span>
-                        </div>
-                        <span>₹19.99 x 1</span>
-                    </div>
-                    <div class="order-item">
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=80&q=80" alt="Hydra Cleanser">
-                            <span>Hydra Cleanser</span>
-                        </div>
-                        <span>₹14.99 x 2</span>
-                    </div>
-                    <div class="order-total">
-                        Total: ₹49.97
-                    </div>
-                </div>
-                <!-- Checkout Form -->    <form class="form-section"></form>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="name" class="form-label">Full Name</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Shipping Address</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
-                            <input type="text" class="form-control" id="address" placeholder="Enter your shipping address" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-city"></i></span>
-                                <input type="text" class="form-control" id="city" placeholder="City" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="zip" class="form-label">ZIP Code</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-location-arrow"></i></span>
-                                <input type="text" class="form-control" id="zip" placeholder="ZIP" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="country" class="form-label">Country</label>
-                            <div class="input-group">
-                                <span class="input-group-text"><i class="fa-solid fa-flag"></i></span>
-                                <input type="text" class="form-control" id="country" placeholder="Country" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="payment" class="form-label">Payment Method</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fa-solid fa-credit-card"></i></span>
-                            <select class="form-select" id="payment" required>
-                                <option value="">Select payment method</option>
-                                <option>Credit Card</option>
-                                <option>Debit Card</option>
-                                <option>UPI</option>
-                                <option>Cash on Delivery</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 mt-2"><i class="fa-solid fa-lock me-2"></i>Place Order</button>
-                </form>
+      <!-- Display Messages -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <!-- Checkout Form -->
+      <form method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="full_name" class="form-label">Full Name</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+              <input type="text" name="full_name" id="full_name" class="form-control" placeholder="Your full name" required value="{{ request.POST.full_name|default_if_none:'' }}">
             </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+              <input type="email" name="email" id="email" class="form-control" placeholder="Your email address" required value="{{ request.POST.email|default_if_none:'' }}">
+            </div>
+          </div>
         </div>
-    </section>
+
+        <div class="mb-3">
+          <label for="mobile" class="form-label">Mobile Number</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+            <input type="tel" name="mobile" id="mobile" class="form-control" placeholder="Your mobile number" required value="{{ request.POST.mobile|default_if_none:'' }}">
+          </div>
+        </div>
+
+        <!-- Address Section -->
+        <div class="mb-3">
+          <label for="flat_building" class="form-label">Flat, House No., Building</label>
+          <input type="text" name="flat_building" id="flat_building" class="form-control" placeholder="Ex: Flat 101, XYZ Apartments" required value="{{ request.POST.flat_building|default_if_none:'' }}">
+        </div>
+
+        <div class="mb-3">
+          <label for="area_street" class="form-label">Area, Street</label>
+          <input type="text" name="area_street" id="area_street" class="form-control" placeholder="Ex: MG Road" required value="{{ request.POST.area_street|default_if_none:'' }}">
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="pincode" class="form-label">PIN Code</label>
+            <input type="text" name="pincode" id="pincode" class="form-control" required value="{{ request.POST.pincode|default_if_none:'' }}">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" name="city" id="city" class="form-control" required value="{{ request.POST.city|default_if_none:'' }}">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="district" class="form-label">District</label>
+            <input type="text" name="district" id="district" class="form-control" required value="{{ request.POST.district|default_if_none:'' }}">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="state" class="form-label">State</label>
+          <input type="text" name="state" id="state" class="form-control" required value="{{ request.POST.state|default_if_none:'' }}">
+        </div>
+
+        <!-- Payment Method -->
+        <!-- Payment Method -->
+        <div class="mb-3">
+          <label for="payment_method" class="form-label">Payment Method</label>
+          <select name="payment_method" id="payment_method" class="form-select" required>
+            <option value="">Choose...</option>
+            <option value="GPay" {% if request.POST.payment_method == "GPay" %}selected{% endif %}>GPay</option>
+            <option value="Paytm" {% if request.POST.payment_method == "Paytm" %}selected{% endif %}>Paytm</option>
+            <option value="PhonePe" {% if request.POST.payment_method == "PhonePe" %}selected{% endif %}>PhonePe</option>
+          </select>
+        </div>
+
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+          <i class="fa-solid fa-lock me-2"></i>Place Order Securely
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
